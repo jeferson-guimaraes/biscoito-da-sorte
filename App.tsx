@@ -1,118 +1,89 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
+import React, { useState } from "react"
+import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native"
 
-import React from 'react';
-import type {PropsWithChildren} from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
+export default function App() {
+  const [image, setImage] = useState(require('./src/biscoito.png'))
+  const [frase, setFrase] = useState('')
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+  const frases = [
+    'Siga os bons e aprenda com eles.',
+    'O bom-senso vale mais do que muito conhecimento.',
+    'O riso é a menor distância entre duas pessoas.',
+    'Deixe de lado as preocupações e seja feliz.',
+    'Realize o óbvio, penso no improvável e conquiste o impossível.',
+    'Acredite em milagres, mas não dependa deles.',
+    'A maior barreira para o sucesso é o medo do fracasso.'
+  ]
 
-type SectionProps = PropsWithChildren<{
-  title: string;
-}>;
+  function quebraBiscoito() {
+    let numeroAleatorio = Math.floor(Math.random() * frases.length)
+    setFrase(`" ${frases[numeroAleatorio]} "`)
+    setImage(require('./src/biscoitoAberto.png'))
+  }
 
-function Section({children, title}: SectionProps): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-  return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
-  );
-}
-
-function App(): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
+  function novoBiscoito() {
+    setFrase('')
+    setImage(require('./src/biscoito.png'))
+  }
 
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
+    <View style={styles.container}>
+
+      <Image
+        source={image}
+        style={styles.img}
       />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
+
+      <Text style={styles.textoMensagem}>{frase}</Text>
+
+      <TouchableOpacity style={styles.botao} onPress={quebraBiscoito}>
+        <View style={styles.btnArea}>
+          <Text style={styles.btnTexto}>Quebrar biscoito</Text>
         </View>
-      </ScrollView>
-    </SafeAreaView>
-  );
+      </TouchableOpacity>
+
+      <TouchableOpacity style={[styles.botao, { marginTop: 15, borderColor: '#121212' }]} onPress={novoBiscoito}>
+        <View style={styles.btnArea}>
+          <Text style={[styles.btnTexto, { color: '#121212' }]}>Novo biscoito</Text>
+        </View>
+      </TouchableOpacity>
+
+    </View>
+  )
 }
 
 const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
   },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
+  img: {
+    width: 230,
+    height: 230
   },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
+  textoMensagem: {
+    fontSize: 20,
+    color: '#dd7b22',
+    margin: 30,
+    fontStyle: 'italic',
+    textAlign: 'center'
   },
-  highlight: {
-    fontWeight: '700',
+  botao: {
+    width: 230,
+    height: 50,
+    borderColor: '#dd7b22',
+    borderWidth: 2,
+    borderRadius: 25
   },
-});
-
-export default App;
+  btnArea: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  btnTexto: {
+    fontSize: 17,
+    fontWeight: 'bold',
+    color: '#dd7b22'
+  }
+})
