@@ -1,79 +1,94 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# ☘ Biscoito da Sorte
 
-# Getting Started
+&#x20;&#x20;
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+## ✨ Sobre o Projeto
 
-## Step 1: Start the Metro Server
+Biscoito da Sorte é um aplicativo mobile simples e divertido, desenvolvido com **React Native** para fins de aprendizado.
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+Inspirado nos tradicionais biscoitos da sorte, este app permite que os usuários "quebrem" um biscoito virtual e descubram uma mensagem inspiradora. A ideia principal do projeto é exercitar conceitos fundamentais do desenvolvimento mobile, como manipulação de estado, interatividade e interface intuitiva.
 
-To start Metro, run the following command from the _root_ of your React Native project:
+Se você está começando no mundo do **React Native** ou quer um exemplo prático para estudos, este projeto pode ser um ótimo ponto de partida!
 
-```bash
-# using npm
-npm start
+## 🛠 Requisitos
 
-# OR using Yarn
-yarn start
-```
+Para executar este projeto, você precisa ter instalado:
 
-## Step 2: Start your Application
+- **Node.js** (>= 18)
+- **Yarn** ou **npm**
+- **Android Studio** (para rodar no Android) ou **Xcode** (para rodar no iOS)
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
+## ♻ Instalação
 
-### For Android
+Clone o repositório e instale as dependências:
 
 ```bash
-# using npm
-npm run android
+# Clonando o repositório
+git clone https://github.com/jeferson-guimaraes/biscoito-da-sorte.git
 
-# OR using Yarn
-yarn android
+# Entrando na pasta do projeto
+cd biscoito-da-sorte
+
+# Instalando dependências
+yarn install
+# ou
+npm install
 ```
 
-### For iOS
+## 🚀 Executando o App
+
+Para rodar o aplicativo no emulador ou em um dispositivo físico:
+
+### Android:
 
 ```bash
-# using npm
-npm run ios
-
-# OR using Yarn
-yarn ios
+yarn yarn start
+# ou
+npx react-native start
 ```
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
+### iOS (Apenas no macOS):
 
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
+```bash
+yarn yarn start
+# ou
+npx react-native start
+```
 
-## Step 3: Modifying your App
+## 📚 Estrutura do Projeto
 
-Now that you have successfully run the app, let's modify it.
+```
+Biscoito-da-Sorte/
+├── src/                # Código fonte
+├── android/            # Configurações do Android
+├── ios/                # Configurações do iOS
+├── node_modules/       # Dependências instaladas
+├── package.json        # Gerenciador de dependências
+└── README.md           # Documentação do projeto
+```
 
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
+## ⚡ Scripts Disponíveis
 
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
+- `yarn start` - Inicia o Metro Bundler
+- `yarn android` - Executa o app no Android
+- `yarn ios` - Executa o app no iOS
 
-## Congratulations! :tada:
+## 🌟 Tecnologias Utilizadas
 
-You've successfully run and modified your React Native App. :partying_face:
+- **React Native** - Para desenvolvimento mobile
+- **TypeScript** - Para tipagem estática
+- **ESLint & Prettier** - Para padronização do código
 
-### Now what?
+## 📢 Contribuição
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
+Fique à vontade para contribuir com este projeto! Para isso:
 
-# Troubleshooting
+1. Faça um **fork** do repositório
+2. Crie uma **branch** com sua funcionalidade (`git checkout -b minha-feature`)
+3. Faça o **commit** das suas alterações (`git commit -m 'Adicionando minha feature'`)
+4. Faça um **push** para a branch (`git push origin minha-feature`)
+5. Abra um **Pull Request**
 
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
+## © Licença
 
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+Este projeto está sob a licença **MIT**. Sinta-se livre para utilizá-lo e modificá-lo como quiser!
